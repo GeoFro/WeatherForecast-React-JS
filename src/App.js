@@ -14,8 +14,7 @@ class App extends Component {
 
   getWeatherData = async (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    const api_call = await fetch('http://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22');
+    const api_call = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=91525a419dbbd055bbb24eabdb8bac68&units=metric');
     const data = await api_call.json();
     console.log(data);
   }
@@ -27,7 +26,7 @@ class App extends Component {
     return (
       <div>
         <Title />
-        <Form getWeather={this.getWeather}/>
+        <Form getWeatherData={this.getWeatherData}/>
         <Weather />
       </div>
     );

@@ -147,7 +147,42 @@ class App extends Component {
     return (
       <div>
         <Title />
-        <ListWeather />
+        <ListWeather
+        city0={this.state.city0}
+        city0_country={this.state.city0_country}
+        city0_temperature={this.state.city0_temperature}
+        city0_temperture_min={this.state.city0_temperature_min}
+        city0_temperature_max={this.state.city0_temperature_max}
+        city0_description={this.state.city0_description}
+
+        city1={this.state.city1}
+        city1_country={this.state.city1_country}
+        city1_temperature={this.state.city1_temperature}
+        city1_temperture_min={this.state.city1_temperature_min}
+        city1_temperature_max={this.state.city1_temperature_max}
+        city1_description={this.state.city1_description}
+
+        city2={this.state.city2}
+        city2_country={this.state.city2_country}
+        city2_temperature={this.state.city2_temperature}
+        city2_temperture_min={this.state.city2_temperature_min}
+        city2_temperature_max={this.state.city2_temperature_max}
+        city2_description={this.state.city2_description}
+
+        city3={this.state.city3}
+        city3_country={this.state.city3_country}
+        city3_temperature={this.state.city3_temperature}
+        city3_temperture_min={this.state.city3_temperature_min}
+        city3_temperature_max={this.state.city3_temperature_max}
+        city3_description={this.state.city3_description}
+
+        city4={this.state.city4}
+        city4_country={this.state.city4_country}
+        city4_temperature={this.state.city4_temperature}
+        city4_temperture_min={this.state.city4_temperature_min}
+        city4_temperature_max={this.state.city4_temperature_max}
+        city4_description={this.state.city4_description}
+        />
         <Form getWeatherData={this.getWeatherData}/>
         <Weather
         city_name={this.state.city_name}

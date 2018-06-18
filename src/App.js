@@ -8,6 +8,14 @@ const APIKEY = '91525a419dbbd055bbb24eabdb8bac68';
 
 class App extends Component {
 
+  state = {
+    city_name: undefined,
+    city_country: undefined,
+    city_temperature: undefined,
+    city_description: undefined,
+    error: undefined
+  }
+
 
   // Getting data from the OpenWeatherMap api
   // The function is given the argument (e) in order to prevent a full page refresh on running the fucntion (when the form in the Form component is submitted)
@@ -21,6 +29,24 @@ class App extends Component {
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${APIKEY}&units=metric`);
     const data = await api_call.json();
     console.log(data);
+
+    if (city && country) {
+      this.setState({
+        city_name: data.name,
+        city_country: data.sys.country,
+        city_temperature: data.main.temp,
+        city_description: data.weather[0].description,
+        error: ''
+      });
+    } else {
+      this.setState({
+        city_name: undefined,
+        city_country: undefined,
+        city_temperature: undefined,
+        city_description: undefined,
+        error: 'Please enter a valid city and country'
+      });
+    }
   }
 
   // The Form component is given a prop of getWeather. The value of which is the getWeather function defined in the App component above.
@@ -31,7 +57,13 @@ class App extends Component {
       <div>
         <Title />
         <Form getWeatherData={this.getWeatherData}/>
-        <Weather />
+        <Weather
+        city_name={this.state.city_name}
+        city_country={this.state.city_country}
+        city_temperature={this.state.city_temperature}
+        city_description={this.state.city_description}
+        error={this.state.error}
+        />
       </div>
     );
   }

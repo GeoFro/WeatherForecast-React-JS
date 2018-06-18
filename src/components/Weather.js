@@ -14,6 +14,9 @@ class Weather extends Component {
       { this.props.city_description &&
         <div>Weather Forecast: {this.props.city_description}</div>
       }
+      { this.props.error &&
+        <div>{this.props.error}</div>
+      }
     </div>
     );
   }

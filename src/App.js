@@ -14,7 +14,8 @@ class App extends Component {
 
   getWeatherData = async (e) => {
     e.preventDefault();
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Manchester,uk&appid=${API}&units=metric`);
+    e.stopPropagation();
+    const api_call = await fetch('http://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22');
     const data = await api_call.json();
     console.log(data);
   }

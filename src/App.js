@@ -4,7 +4,7 @@ import Form from './components/Form';
 import Title from './components/Title';
 import Weather from './components/Weather';
 
-const API = '91525a419dbbd055bbb24eabdb8bac68';
+const APIKEY = '91525a419dbbd055bbb24eabdb8bac68';
 
 class App extends Component {
 
@@ -14,7 +14,11 @@ class App extends Component {
 
   getWeatherData = async (e) => {
     e.preventDefault();
-    const api_call = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=91525a419dbbd055bbb24eabdb8bac68&units=metric');
+
+    const city = e.target.elements.city.value;
+    const country = e.target.elements.country.value;
+
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${APIKEY}&units=metric`);
     const data = await api_call.json();
     console.log(data);
   }

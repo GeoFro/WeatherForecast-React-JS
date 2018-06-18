@@ -16,6 +16,42 @@ const VladivostokID = '2013348';
 class App extends Component {
 
   state = {
+
+    city0: undefined,
+    city0_country: undefined,
+    city0_temperature: undefined,
+    city0_temperature_min: undefined,
+    city0_temperature_max: undefined,
+    city0_description: undefined,
+
+    city1: undefined,
+    city1_country: undefined,
+    city1_temperature: undefined,
+    city1_temperature_min: undefined,
+    city1_temperature_max: undefined,
+    city1_description: undefined,
+
+    city2: undefined,
+    city2_country: undefined,
+    city2_temperature: undefined,
+    city2_temperature_min: undefined,
+    city2_temperature_max: undefined,
+    city2_description: undefined,
+
+    city3: undefined,
+    city3_country: undefined,
+    city3_temperature: undefined,
+    city3_temperature_min: undefined,
+    city3_temperature_max: undefined,
+    city3_description: undefined,
+
+    city4: undefined,
+    city4_country: undefined,
+    city4_temperature: undefined,
+    city4_temperature_min: undefined,
+    city4_temperature_max: undefined,
+    city4_description: undefined,
+
     city_name: undefined,
     city_country: undefined,
     city_temperature: undefined,
@@ -62,9 +98,47 @@ class App extends Component {
     console.log(list_data);
 
     this.setState({
+      city0: list_data.list[0].name,
+      city0_country: list_data.list[0].sys.country,
+      city0_temperature: list_data.list[0].main.temp,
+      city0_temperature_min: list_data.list[0].main.temp_min,
+      city0_temperature_max: list_data.list[0].main.temp_max,
+      city0_description: list_data.list[0].weather[0].description,
+
+      city1: list_data.list[0].name,
+      city1_country: list_data.list[1].sys.country,
+      city1_temperature: list_data.list[1].main.temp,
+      city1_temperature_min: list_data.list[1].main.temp_min,
+      city1_temperature_max: list_data.list[1].main.temp_max,
+      city1_description: list_data.list[1].weather[0].description,
+
+      city2: list_data.list[2].name,
+      city2_country: list_data.list[2].sys.country,
+      city2_temperature: list_data.list[2].main.temp,
+      city2_temperature_min: list_data.list[2].main.temp_min,
+      city2_temperature_max: list_data.list[2].main.temp_max,
+      city2_description: list_data.list[2].weather[0].description,
+
+      city3: list_data.list[3].name,
+      city3_country: list_data.list[3].sys.country,
+      city3_temperature: list_data.list[3].main.temp,
+      city3_temperature_min: list_data.list[3].main.temp_min,
+      city3_temperature_max: list_data.list[3].main.temp_max,
+      city3_description: list_data.list[3].weather[0].description,
+
+      city4: list_data.list[4].name,
+      city4_country: list_data.list[4].sys.country,
+      city4_temperature: list_data.list[4].main.temp,
+      city4_temperature_min: list_data.list[4].main.temp_min,
+      city4_temperature_max: list_data.list[4].main.temp_max,
+      city4_description: list_data.list[4].weather[0].description
 
     })
   }
+
+  componentDidMount() {
+    this.getTopCityData();
+  };
 
   // The Form component is given a prop of getWeather. The value of which is the getWeather function defined in the App component above.
   // The getWeather function will now be accessible inside the Form component.

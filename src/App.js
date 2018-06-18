@@ -3,8 +3,15 @@ import React, { Component } from 'react';
 import Form from './components/Form';
 import Title from './components/Title';
 import Weather from './components/Weather';
+import ListWeather from './components/ListWeather';
 
 const APIKEY = '91525a419dbbd055bbb24eabdb8bac68';
+
+const RigaID = '456172';
+const SydneyID = '2147714';
+const LondonID = '2643743';
+const MadridID = '3117735';
+const VladivostokID = '2013348';
 
 class App extends Component {
 
@@ -15,7 +22,6 @@ class App extends Component {
     city_description: undefined,
     error: undefined
   }
-
 
   // Getting data from the OpenWeatherMap api
   // The function is given the argument (e) in order to prevent a full page refresh on running the fucntion (when the form in the Form component is submitted)
@@ -49,6 +55,17 @@ class App extends Component {
     }
   }
 
+  getTopCityData = async () => {
+
+    const list_api_call = await fetch(`http://api.openweathermap.org/data/2.5/group?id=${RigaID},${SydneyID},${MadridID},${LondonID},${VladivostokID}&appid=${APIKEY}&units=metric`);
+    const list_data = await list_api_call.json();
+    console.log(list_data);
+
+    this.setState({
+
+    })
+  }
+
   // The Form component is given a prop of getWeather. The value of which is the getWeather function defined in the App component above.
   // The getWeather function will now be accessible inside the Form component.
 
@@ -56,6 +73,7 @@ class App extends Component {
     return (
       <div>
         <Title />
+        <ListWeather />
         <Form getWeatherData={this.getWeatherData}/>
         <Weather
         city_name={this.state.city_name}

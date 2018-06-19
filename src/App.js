@@ -8,6 +8,8 @@ import ListWeather from './components/ListWeather';
 import styled from 'styled-components';
 
 const BodyStyle = styled.div`
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
 `;
 
 const APIKEY = '91525a419dbbd055bbb24eabdb8bac68';

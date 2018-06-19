@@ -9,6 +9,12 @@ const FormContainer = styled.div`
 `;
 
 const ButtonStyle = {
+  padding: '1rem',
+  margin: 'auto',
+  marginTop: '1rem'
+}
+
+const InputStyle = {
   padding: '1rem'
 }
 
@@ -19,8 +25,8 @@ const FormComponent = props => (
   <FormContainer>
     <Form onSubmit={props.getWeatherData}>
       <Label>Lookup the weather in your city</Label>
-      <Input type="text" name="city" placeholder="Sydney" ></Input>
-      <Input type="text" name="country" placeholder="Australia" ></Input>
+      <Input style={InputStyle} type="text" name="city" placeholder="Sydney" ></Input>
+      <Input style={InputStyle} type="text" name="country" placeholder="Australia" ></Input>
       <Button style={ButtonStyle} outline color="info">Find weather</Button>
     </Form>
   </FormContainer>

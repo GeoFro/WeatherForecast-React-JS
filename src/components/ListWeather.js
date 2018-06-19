@@ -7,6 +7,7 @@ const CityList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 `;
 
 const CityItem = styled.div`
@@ -14,6 +15,7 @@ const CityItem = styled.div`
   text-align: center;
   border: 0.5px #b9c1ce solid;
   border-radius: 20px;
+  margin: 1rem;
 `;
 
 const CityName = styled.div`
@@ -60,7 +62,7 @@ const ListWeather = props => (
       <Pic src={`${props.city0_main_desc}.svg`}></Pic>
       <MinMax>
         <Min>Min: {props.city0_temperature_min}°C</Min>
-         |
+         &nbsp;|&nbsp;
         <Max>Max: {props.city0_temperature_max}°C</Max>
       </MinMax>
       <Desc>{props.city0_description}</Desc>
@@ -72,7 +74,7 @@ const ListWeather = props => (
       <Pic src={`${props.city1_main_desc}.svg`}></Pic>
       <MinMax>
         <Min>Min: {props.city1_temperature_min}°C</Min>
-         |
+         &nbsp;|&nbsp;
         <Max>Max: {props.city1_temperature_max}°C</Max>
       </MinMax>
       <Desc>{props.city1_description}</Desc>
@@ -84,7 +86,7 @@ const ListWeather = props => (
       <Pic src={`${props.city2_main_desc}.svg`}></Pic>
       <MinMax>
         <Min>Min: {props.city2_temperature_min}°C</Min>
-         |
+         &nbsp;|&nbsp;
          <Max>Max: {props.city2_temperature_max}°C</Max>
       </MinMax>
       <Desc>{props.city2_description}</Desc>
@@ -96,7 +98,7 @@ const ListWeather = props => (
       <Pic src={`${props.city3_main_desc}.svg`}></Pic>
       <MinMax>
         <Min>Min: {props.city3_temperature_min}°C</Min>
-         |
+         &nbsp;|&nbsp;
          <Max>Max: {props.city3_temperature_max}°C</Max>
       </MinMax>
       <Desc>{props.city3_description}</Desc>
@@ -108,7 +110,7 @@ const ListWeather = props => (
       <Pic src={`${props.city4_main_desc}.svg`}></Pic>
       <MinMax>
         <Min>Min: {props.city4_temperature_min}°C </Min>
-         |
+         &nbsp;|&nbsp;
         <Max>Max: {props.city4_temperature_max}°C</Max>
        </MinMax>
       <Desc>{props.city4_description}</Desc>

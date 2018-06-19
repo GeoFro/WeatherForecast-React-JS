@@ -3,6 +3,8 @@ import React from 'react';
 // This is a stateless functional component.
 // It does not need to have state so it can be in the simplified form below.
 
+// Data will only display if the data is present.
+
 const Weather = props => (
   <div>
     { props.city_name && props.city_country &&

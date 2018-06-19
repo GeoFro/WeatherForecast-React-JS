@@ -8,6 +8,8 @@ const WeatherResult = styled.div`
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  width: 50%;
+  text-align: center;
 `;
 
 const ResultName = styled.div`
@@ -33,23 +35,28 @@ const ResultDesc = styled.div`
 // Data will only display if the data is present.
 
 const Weather = props => (
-  <WeatherResult>
+  <div>
     { props.city_name &&
-        <ResultName>{props.city_name}</ResultName>
+      <WeatherResult>
+        { props.city_name &&
+            <ResultName>{props.city_name}</ResultName>
+        }
+        { props.city_country &&
+          <ResultCountry>{props.city_country}</ResultCountry>
+        }
+        { props.city_temperature &&
+          <ResultTemp>Current Temperature: {props.city_temperature} °C</ResultTemp>
+        }
+        { props.city_description &&
+          <ResultDesc>Weather Forecast: {props.city_description}</ResultDesc>
+        }
+        { props.error &&
+          <div>{props.error}</div>
+        }
+      </WeatherResult>
     }
-    { props.city_country &&
-      <ResultCountry>{props.city_country}</ResultCountry>
-    }
-    { props.city_temperature &&
-      <ResultTemp>Current Temperature: {props.city_temperature} °C</ResultTemp>
-    }
-    { props.city_description &&
-      <ResultDesc>Weather Forecast: {props.city_description}</ResultDesc>
-    }
-    { props.error &&
-      <div>{props.error}</div>
-    }
-  </WeatherResult>
+  </div>
+
 );
 
 export default Weather;

@@ -5,7 +5,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 const FormContainer = styled.div`
   width: 50%;
   margin: auto;
-  padding: 2rem;
+  padding: 1rem;
 `;
 
 const ButtonStyle = {

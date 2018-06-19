@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 const CityList = styled.div`
   padding: 1rem;
+  padding-top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0;
 `;
 
 const CityItem = styled.div`
